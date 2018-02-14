@@ -10,7 +10,8 @@
     </head>
     <body>
         <div class="todo-header">
-            <input id="new-activity" class="todo-input" type="text" placeholder="Enter Activity To Do..." onkeydown="if(event.keyCode === 13) { todoAdd()}">
+            <input id="new-activity" maxlength="55" class="todo-input" type="text" placeholder="Enter Activity To Do..." onkeydown="if(event.keyCode === 13) { todoAdd()}">
+            <button id="hide-complete" onclick="todoHide()">Hide Complete</button>
         </div>
 
         <div class="todo-list">

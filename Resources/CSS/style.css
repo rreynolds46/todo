@@ -27,7 +27,7 @@ body {
 .todo-input {
     background-color: rgba(255,255,255,.1);
     height: 75%;
-    width: 90%;
+    width: 80%;
     border: none;
     color: white;
     padding-left: 10px;
@@ -38,10 +38,18 @@ body {
     font-size: 1.5em;
 }
 
-
-
 .todo-input::-moz-placeholder {
     float: right;
+}
+
+#hide-complete {
+    background: rgba(255,255,255,.1);
+    border: rgba(255,255,255,.2) solid 1px;
+    border-radius: 5px;
+    margin-left: 15px;
+    width: 10%;
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
 }
 
 /* Todo List */
@@ -112,4 +120,18 @@ body {
 
 .todo-complete:hover {
     color: rgba(153,204,153,1);
+}
+
+.todo-active {
+    text-decoration: line-through;
+    background: rgba(153,204,153,.3);
+}
+
+.todo-active:hover {
+    text-decoration: line-through;
+    background: rgba(153,204,153,.3);
+}
+
+.todo-active-hidden {
+    display: none;
 }
