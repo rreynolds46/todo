@@ -1,5 +1,5 @@
 
-
+// Function to Add a New Activity 
 function todoAdd() {
     var ul = document.getElementById("list");
     var entry = document.getElementById("new-activity");
@@ -8,9 +8,15 @@ function todoAdd() {
         
     var li = document.createElement("li");
     li.setAttribute('id',entry.value);
-    li.setAttribute('class','todo-item');
-    li.innerText = entry.value;
+
     
+    var todoText = document.createElement("div");
+    todoText.innerText = entry.value;
+    todoText.setAttribute('class','todo-item');
+    todoText.onmouseover = todoHover;
+    todoText.onmouseout = todoHoverEnd;
+
+
     var buttons = document.createElement("div");
     buttons.setAttribute('class','todo-item-buttons');
     
@@ -26,11 +32,20 @@ function todoAdd() {
     innerComplete.setAttribute('class','fas fa-check fa-2x')
     complete.appendChild(innerComplete)
     
-    buttons.appendChild(remove);
     buttons.appendChild(complete);
-    li.appendChild(buttons);
+    buttons.appendChild(remove);
+    todoText.appendChild(buttons);
+    li.appendChild(todoText);
 
     ul.appendChild(li);
 
     document.getElementById("new-activity").value = '';
 }};
+
+function todoHover() {
+    this.childNodes[1].style.visibility = "visible";
+};
+
+function todoHoverEnd() {
+    this.childNodes[1].style.visibility = "hidden";
+}
