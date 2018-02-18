@@ -59,21 +59,13 @@ function todoRemove() {
 }
 
 function todoComplete() {
-    if(this.parentNode.parentNode.classList.contains("todo-active")) {
-        this.parentNode.parentNode.classList.remove("todo-active")
-    } else {
-        this.parentNode.parentNode.classList.add("todo-active")
-    }
+        this.parentNode.parentNode.classList.toggle("todo-active")
 }
 
 // Hide Complete
 function todoHide() {
     elements = document.getElementsByClassName("todo-active");
     for(var i = 0; i < elements.length; i++) {
-        if(elements[i].classList.contains("todo-active-hidden")) {
-            elements[i].classList.remove("todo-active-hidden")
-        } else {
-            elements[i].classList.add("todo-active-hidden")
-        }
-    }
+            elements[i].classList.toggle("todo-active-hidden");
+         }
 }
